@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.org/ViniciusLovato/synth-share.svg?branch=development)](https://travis-ci.org/ViniciusLovato/synth-share)
