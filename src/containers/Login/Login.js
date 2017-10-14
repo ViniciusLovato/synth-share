@@ -1,67 +1,48 @@
 import React, { Component } from 'react';
 
-import firebase, { auth, provider } from '../../utils/firebase.js';
+import logo from '../../assets/images/logo.png';
+
 import './Login.css';
-
-
-const propTypes = {
-
-}
+import LoginForm from '../../components/LoginForm/LoginForm';
+import GoogleLoginForm from '../../components/GoogleLoginForm/GoogleLoginForm';
 
 class Login extends Component {
 
-  constructor(){
-    super();
-    this.state = {
-      user: null
-    }
-
-    this.login = this.login.bind(this);
-  }
-
-  login(){
-    auth.signInWithPopup(provider)
-      .then(result => {
-        this.setState({user: result.user});
-      })
-      .catch(err =>{
-        console.log('Error login in')
-      })
-  }
-
   render(){
     return(
-      <div>
-        {/* <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="Email"/>
-          </div>
-        </div>
-        <div className="field">
-          <div className="control">
-            <input className="input" type="text" placeholder="Password"/>
-          </div>
-        </div> */}
-        <div>
-
-
-        </div>
-
-        <div className="field">
-          <div className="control">
-            <div>
-              <button onClick={this.login} className="button is-primary" >Sign in with Google</button>
+      <div className="columns is-gapless">
+        <div className="column is-4">
+          <section className="hero is-fullheight">
+            <div className="hero-body">
+              <div className="container">
+                <div className="columns">
+                  <div className="column is-10 is-offset-1">
+                    <h1 className=" has-text-centered logo">       
+                      <img src={logo} alt="application logo" width="200px"/>
+                    </h1>
+                    <LoginForm/>
+                    <div className="has-text-centered">
+                      <br/>
+                      <GoogleLoginForm/>           
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section> 
         </div>
-
-
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-primary">Sign in</button>
-          </div>
-          <div className="control">
-            <button className="button is-link">Sign up</button>
+        <div className="column is-8">
+          <div className="hero-banner">
+            <section className="hero is-fullheight is-success">
+              <div className="hero-body">
+                <div className="container section">
+                  <div className="has-text-right">
+                    <h1 className="title is-1">Login</h1> <br/>
+                    <p className="title is-3">Secure User Account Login</p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
@@ -69,5 +50,4 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = propTypes;
 export default Login;

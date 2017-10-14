@@ -1,0 +1,12 @@
+
+.login-form .control {
+  margin: 15px;
+}
+
+.login-form .email-input, .login-form .password-input {
+  border-radius: 25px;
+}
+
+.login-form .login-button {
+  border-radius: 25px;
+}

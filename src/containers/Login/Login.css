@@ -1,0 +1,16 @@
+.logo {
+  padding: 15px;
+}
+
+.hero-banner .hero {
+  background: url('https://images.unsplash.com/photo-1472289065668-ce650ac443d2?dpr=1&auto=compress,format&fit=crop&w=1500&h=&q=80&cs=tinysrgb&crop=');
+  background-position: center;
+  background-size: cover;
+}
+
+
+.hero-banner .title {
+  display: inline-block;
+  background-color: rgba(0,0,0, 0.6);
+  padding: 5px;
+}

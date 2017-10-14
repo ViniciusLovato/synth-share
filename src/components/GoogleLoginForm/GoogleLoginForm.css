@@ -1,0 +1,19 @@
+#google-login {
+  background-image: url('./images/btn_google_dark.png');
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 200px;
+  display: inline-block;
+}
+
+#google-login:hover {
+  background-image: url('./images/btn_google_focus_dark.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#google-login:active {
+  background-image: url('./images/btn_google_pressed_dark.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

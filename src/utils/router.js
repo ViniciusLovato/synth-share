@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { 
   Route, 
   BrowserRouter, 
-  Link, 
   Redirect, 
   Switch 
 } from 'react-router-dom'
-import { auth, provider } from '../utils/firebase';
+import { auth } from '../utils/firebase';
 
 import Home from '../containers/Home/Home';
 import Login from '../containers/Login/Login';
@@ -66,23 +65,17 @@ class Router extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          {/* nav bar goes here */}
-          <div className="container">
-            { this.state.loading === true ?
-              <h1></h1> : 
-              <div className="row">
-                <Switch>
-                  <Route path='/' exact component={Home} />
-                  <PublicRoute authenticated={this.state.authenticated} path='/login' component={Login} />
-                  <PrivateRoute authenticated={this.state.authenticated} path='/profile' component={Profile} />
-                  <Route render={() => <h3>No Match</h3>} />
-                </Switch>
-              </div>
-            }
-          </div>
-        </div>
-      </BrowserRouter>
+        {/* nav bar goes here */}
+          { this.state.loading === true ?
+            <h1> Loading ... </h1> : 
+            <Switch>
+              <Route path='/' exact component={Home} />
+              <PublicRoute authenticated={this.state.authenticated} path='/login' component={Login} />
+              <PrivateRoute authenticated={this.state.authenticated} path='/profile' component={Profile} />
+              <Route render={() => <h3>No Match</h3>} />
+            </Switch>
+          }
+    </BrowserRouter>
     );
   }
 }
