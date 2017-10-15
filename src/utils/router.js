@@ -27,7 +27,7 @@ function PublicRoute ({component: Component, authenticated, ...rest}) {
     <Route
       {...rest}
       render={(props) => authenticated === true
-        ? <Redirect to='/profile' />
+        ? <Redirect to='/home' />
         : <Component {...props} />}
     />
   )
@@ -69,9 +69,12 @@ class Router extends Component {
           { this.state.loading === true ?
             <h1> Loading ... </h1> : 
             <Switch>
-              <Route path='/' exact component={Home} />
+              <PrivateRoute path='/' exact/>
               <PublicRoute authenticated={this.state.authenticated} path='/login' component={Login} />
+              
               <PrivateRoute authenticated={this.state.authenticated} path='/profile' component={Profile} />
+              <PrivateRoute authenticated={this.state.authenticated} path='/home' component={Home} />
+              
               <Route render={() => <h3>No Match</h3>} />
             </Switch>
           }
